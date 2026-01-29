@@ -49,6 +49,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Clear loading message
       activitiesList.innerHTML = "";
+      
+      // Clear activity dropdown options (keep only the first default option)
+      activitySelect.innerHTML = '<option value="">-- Select an activity --</option>';
 
       // Populate activities list
       Object.entries(activities).forEach(([name, details]) => {
@@ -64,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <p><strong>Availability:</strong> ${spotsLeft} spots left</p>
           <div class="participants-section">
             <strong>Participants:</strong>
-            <ul class="participants-list" id="participants-${name.replace(/\s+/g, '-')}"></ul>
+            <ul class="participants-list"></ul>
           </div>
         `;
 
